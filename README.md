@@ -1,5 +1,3 @@
-# bank-of-react-starter-code
-This repository is the starter code for Assignment 3 - Bank of React.
 
 ### Live Link 
 [Website link](https://dinastyk.github.io/assignment3/)

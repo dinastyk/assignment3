@@ -28,28 +28,26 @@ function Credits(props) {
     };
     updateCreditList(newCredit);
     updateBalance(updatedBalance);
-//Clear input fields after adding credit
-setDescription('');
-setAmount('');
+    setDescription('');
+    setAmount('');
+  }
 
-}
+  return (
+    <div style={{textAlign: 'center'}}>
+      <h1>Credits</h1>
+      <ul style={{listStyle: 'none', paddingLeft: 0, textAlign: 'center'}}>
+        {credits.map((credit) => (
+          <li key={credit.id}>
+            <div className='credit-item'>
+              <strong>Description:</strong> {credit.description} <br/>
+              <strong>Amount:</strong> ${parseFloat(credit.amount).toFixed(2)}<br/>
+              <strong>Date:</strong> {new Date(credit.date).toISOString().split('T')[0]} <br/>
+              <br/>
+            </div>
+          </li>
+        ))}
 
-
-return (
-<div style={{textAlign: 'center'}}>
-  <h1>Credits</h1>
-  <ul style={{listStyle: 'none', paddingLeft: 0, textAlign: 'center'}}>
-    {credits.map((credit) => (
-      <li key={credit.id}>
-        <div className='credit-item'>
-          <strong>Description:</strong> {credit.description} <br/>
-          <strong>Amount:</strong> ${parseFloat(credit.amount).toFixed(2)}<br/>
-          <strong>Date:</strong> {new Date(credit.date).toISOString().split('T')[0]} <br/>
-          <br/>
-        </div>
-      </li>
-    ))}
-  </ul>
+        </ul>
         <br/>
         <br/>
         <div className='add-credit'>
@@ -64,9 +62,11 @@ return (
         <br/>
         <br/>
         <br/>
+
         <Link to="/">Return to Home</Link>
     </div>
   );
 }
+
 
 export default Credits;
